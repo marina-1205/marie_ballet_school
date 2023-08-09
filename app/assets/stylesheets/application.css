@@ -13,3 +13,61 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   color:#967E76;
+   font-family: "ヒラギノ丸ゴ Pro W4","Nunito","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", sans-serif;
+ }
+
+header {
+  background-color:#F8E8EE;
+  padding: 10px;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+body {
+    position: relative;
+    background-image: image-url('background-image.jpg');
+    background-position: center center;
+    background-repeat: repeat-y;
+    background-size: auto;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+main {
+  min-height: 500px;
+}
+
+footer {
+  width: 100%;
+  background-color:#F8E8EE;
+  /*padding: 5px;*/
+  margin: 0;
+}
+
+/* リンクの文字色・背景色・カーソル時の色変更*/
+/*!importantは推奨されない使い方です*/
+.page-link {
+  background-color: #F7DBF0!important;
+}
+
+a {
+ color:#FFAAC9!important;
+}
+
+a:hover {
+  color:  #F675A8!important;
+}
+
+.mail-box {
+    color: #967E76!important;
+}
+
+.mail-magazine {
+    color: #967E76!important;
+}

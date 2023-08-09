@@ -1,2 +1,67 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<div class="plate mx-auto" id="cork">
+  <div class="home-box mx-auto my-3 text-center">
+
+    <div class="content-container container">
+      <!--<div class="genre_search">-->
+      <!--  %= render 'public/items/genre_search', genres: @genres %>-->
+      <!--</div>-->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          $('.slide-item').hide();
+          $('.slide-item:first').show();
+
+          setInterval(function () {
+            var currentSlide = $('.slide-item:visible');
+            var nextSlide = currentSlide.next('.slide-item');
+
+            if (nextSlide.length === 0) {
+              nextSlide = $('.slide-item:first');
+            }
+
+            currentSlide.fadeOut(500);
+            nextSlide.fadeIn(500);
+          }, 3000); // 3秒ごとにスライドを切り替え
+        });
+      </script>
+
+      <div class="slide">
+        <div class="slide-item">
+          <%= image_tag "ballet1.jpg", class: "slide-img", width: "900", height: "600" %>
+        </div>
+        <div class="slide-item">
+          <%= image_tag "ballet2.jpg", class: "slide-img", width: "900", height: "600" %>
+        </div>
+        <div class="slide-item">
+          <%= image_tag "ballet3.jpg", class: "slide-img", width: "900", height: "600" %>
+        </div>
+        <div class="slide-item">
+          <%= image_tag "ballet4.jpg", class: "slide-img", width: "900", height: "600" %>
+        </div>
+        <div class="slide-item">
+          <%= image_tag "ballet5.jpg", class: "slide-img", width: "900", height: "600" %>
+        </div>
+      </div>
+    </div>
+     <p class="home-text">
+      踊る楽しさ喜びを実感、 心も体も強く美しく成長するお手伝いをします。
+    </p>
+  </div>
+</div>
+
+<!--<div class="container text-center">-->
+<!--  <h2>新着商品</h2>-->
+
+<!--  <ul class="new-item">-->
+<!--    % @items.each do |item| %>-->
+<!--      <li class="item">-->
+<!--        %= link_to item_path(item) do %>-->
+<!--          %= image_tag item.get_item_image, size: "300x200" %>-->
+<!--          <h3>%= item.name %></h3> <!-- 商品の名前を表示 -->-->
+<!--        % end %>-->
+<!--      </li>-->
+<!--    % end %>-->
+<!--  </ul>-->
+
+<!--  <div class="all-items-show-button">%= link_to "全ての商品をみる", items_path %></div>-->
+<!--</div>-->
