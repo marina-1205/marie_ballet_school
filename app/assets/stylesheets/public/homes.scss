@@ -1,6 +1,9 @@
 // Place all the styles related to the public/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+// Topページ
 .content-container {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -42,4 +45,106 @@
 
 .item {
    margin: 10px;
+}
+
+
+
+// aboutページ
+.tabletitle {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 0, 0, 0.0);
+  font-weight: bold;
+  color: white!important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.hgcolor {
+  padding: 10px;
+  font-weight: bold;
+  background-color: #d193b2;
+  color: #ffffff;
+}
+
+.elegance1 {
+  padding: 8px;
+  background-color: #ffe5e5;
+}
+.elegance2 {
+  padding: 8px;
+  background-color: #f9eaea;
+}
+
+.amour1 {
+  padding: 8px;
+  background-color: #ffebe5;
+}
+.amour2 {
+  padding: 8px;
+  background-color: #f9eeea;
+}
+
+.fleur1 {
+  padding: 8px;
+  background-color: #ffe5eb;
+}
+.fleur2 {
+  padding: 8px;
+  background-color: #f9eaee;
+}
+
+.lumiere1 {
+  padding: 8px;
+  background-color: #ffe5f2;
+}
+.lumiere2 {
+  padding: 8px;
+  background-color: #f9eaf2;
+}
+
+.aurora1 {
+  padding: 8px;
+  background-color: #ffe5f8;
+}
+.aurora2 {
+  padding: 8px;
+  background-color: #f9eaf6;
+}
+
+.diamond1 {
+  padding: 8px;
+  background-color: #f2e5ff;
+}
+.diamond2 {
+  padding: 8px;
+  background-color: #f9eaf9;
+}
+
+.grace1 {
+  padding: 8px;
+  background-color: #e5e5ff;
+}
+.grace2 {
+  padding: 8px;
+  background-color: #eaeef9;
 }
