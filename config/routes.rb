@@ -1,4 +1,58 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'reserves/index'
+    get 'reserves/show'
+  end
+  namespace :admin do
+    get 'lesson_classes/index'
+    get 'lesson_classes/edit'
+  end
+  namespace :admin do
+    get 'orders/show'
+  end
+  namespace :admin do
+    get 'customers/edit'
+    get 'customers/index'
+    get 'customers/show'
+  end
+  namespace :admin do
+    get 'genres/edit'
+    get 'genres/index'
+  end
+  namespace :admin do
+    get 'items/edit'
+    get 'items/index'
+    get 'items/new'
+    get 'items/show'
+  end
+  namespace :admin do
+    get 'homes/create'
+    get 'homes/destroy'
+    get 'homes/home'
+  end
+  namespace :public do
+    get 'reserves/new'
+    get 'reserves/complete'
+  end
+  namespace :public do
+    get 'orders/completed'
+    get 'orders/confirm'
+    get 'orders/index'
+    get 'orders/show'
+    get 'orders/new'
+  end
+  namespace :public do
+    get 'cart_items/index'
+  end
+  namespace :public do
+    get 'customers/edit'
+    get 'customers/show'
+    get 'customers/confirm_withdraw'
+  end
+  namespace :public do
+    get 'items/index'
+    get 'items/show'
+  end
  # 顧客用
  devise_for :customers,skip: [:passwords], controllers: {
    registrations: "public/registrations",
