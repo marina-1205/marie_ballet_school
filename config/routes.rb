@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show, :edit, :create, :update, :new]
     resources :orders, only: [:show, :update]
     resources :order_items, only: [:update]
+    resources :reserves, only: [:index, :show]
+    resources :lesson_classes, only: [:index, :edit, :create, :update]
   end
 
   scope module: :public do
@@ -27,14 +29,14 @@ Rails.application.routes.draw do
     patch '/customers/infomation' => 'customers#update'
     get 'customers/confirm_withdraw' => 'customers#confirm_withdraw'
     patch '/customers/withdraw' => 'customers#withdraw'
-    #ジャンル検索
+    
     resources :genres, only: [:show]
     resources :items, only: [:index, :show]
     resource :customers, only: [:new, :create, :show, :edit, :update]
     resources :addresses, only: [:new, :index, :create, :edit, :update, :destroy]
-    #検索
+    
     get "search" => "searches#search"
-    # orders
+
     resources :orders, only: [:new, :create, :index, :show] do
       # データ全体に行いたいのでcollection
       collection do
@@ -42,12 +44,10 @@ Rails.application.routes.draw do
         get 'completed'
       end
     end
-    # cart_item
     resources :cart_items, only: [:index, :update, :create, :destroy] do
       collection do
         delete 'clear'
       end
     end
   end
-
 end

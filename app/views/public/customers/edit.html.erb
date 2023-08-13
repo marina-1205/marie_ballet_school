@@ -1,2 +1,52 @@
-<h1>Public::Customers#edit</h1>
-<p>Find me in app/views/public/customers/edit.html.erb</p>
+<div class="container">
+  <div class="row" style="margin: 10px;">
+    <div class="col text-center">
+      <h3 class="col-4 text-center">会員情報編集</h3>
+      <%= form_with model: @customer, url: customers_infomation_path do |f| %>
+        <table class="table table-borderless">
+          <tbody>
+            <tr class="row">
+              <td class="col-3">氏名</td>
+              <td class="col-2 text-right"><%= f.text_field :last_name, autofocus: true, id: "inputName" %></td>
+              <td class="col-3"><%= f.text_field :first_name, autofocus: true, id: "inputName" %></td>
+            </tr>
+            <tr class="row">
+              <td class="col-3">フリガナ</td>
+              <td class="col-2 text-right"><%= f.text_field :last_kana_name, autofocus: true, id: "inputName" %></td>
+              <td class="col-3"><%= f.text_field :first_kana_name, autofocus: true, id: "inputName" %></td>
+            </tr>
+            <tr class="row">
+              <td class="col-3">郵便番号</td>
+              <td class="col-2"><%= f.text_field :postcode, autofocus: true, id: "inputName" %></td>
+              <td class="col-3"></td>
+            </tr>
+            <tr class="row">
+              <td class="col-3">住所</td>
+              <td class="col-2"><%= f.text_field :address, autofocus: true, id: "inputName", size: "46" %></td>
+              <td class="col-3"></td>
+            </tr>
+            <tr class="row">
+              <td class="col-3">電話番号</td>
+              <td class="col-2"><%= f.text_field :phone_number, autofocus: true, id: "inputName" %></td>
+              <td class="col-3"></td>
+            </tr>
+            <tr class="row">
+              <td class="col-3">メール</td>
+              <td class="col-2"><%= f.text_field :email, autofocus: true, id: "inputName" %></td>
+              <td class="col-3"></td>
+            </tr>
+            <tr class="row">
+              <td class="col-3"></td>
+              <td class="col-3">
+                <div class="form-group">
+                  <%= f.submit "編集内容を保存", class: "btn btn-success", style: "background-color: #dc8ba7;"  %>
+                </div>
+              </td>
+              <td><%= link_to "退会する", customers_confirm_withdraw_path(@customer), class: "btn btn-success", style: "background-color: #dc8ba7;" %></td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>

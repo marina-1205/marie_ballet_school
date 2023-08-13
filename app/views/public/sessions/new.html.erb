@@ -1,26 +1,52 @@
-<h2>Log in</h2>
+<div class = "container" style = "text-center">
+ <h2 class = "col-2 text-center"></h2>
+ <div class = "row" style = "padding: 30px;">
+  <div class = "col text-center">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+   <table class = "table table-borderless">
+    <tr class = "row">
+     <td class = "col-1"></td>
+     <td class = "col-4 text-center">会員の方はこちらからログイン</td>
+     <td></td>
+    </tr>
+    <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+    </tr>
+    <tr class = "row">
+     <td class = "col-2"></td>
+     <td class = "col-2 text-left"><%= f.label :email %></td>
+     <td class = "col-6 text-left"><%= f.email_field :email, autofocus: true, autocomplete: "email", :size => "50" %></td>
+    </tr>
+    <tr class = "row">
+     <td class = "col-2"></td>
+     <td class = "col-2 text-left"><%= f.label :password %></td>
+     <td class = "col-6 text-left"><%= f.password_field :password, autocomplete: "current-password", :size => "50" %></td>
+    </tr>
+    <tr class = "row">
+     <td class = "col-2"></td>
+     <td class = "col-2"></td>
+     <td class = "col-6 text-left"><%= f.submit "ログイン", class: "btn btn-primary px-5", style: "background-color: #dc8ba7;" %></td>
+     <% end %>
+    </tr>
+    <tr>
+     <td></td>
+     <td></td>
+     <td></td>
+    </tr>
+    <tr class = "row">
+     <td class = "col-1"></td>
+     <td class = "col-4 text-center"><b>会員登録がお済みでない方</b></td>
+     <td></td>
+    </tr>
+    <tr class = "row">
+     <td class = "col-2"></td>
+     <td class = "col-4"><%= link_to "こちら", new_customer_registration_path %>から新規登録を行ってください。</td>
+     <td></td>
+    </tr>
+   </table>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "public/shared/links" %>
+ </div>
+</div>

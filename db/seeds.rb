@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Admin.create!(
+# email: 'marie@mail',
+# password: '199012'
+# )
+#二回目rails db:seedするときは、元々登録してた記述をコメントアウトする
+
+#ジャンルカラム記述
+# Genre.create!(name: 'プリンセス')
+# Genre.create!(name: '村娘')
+# Genre.create!(name: '王子様')
+# Genre.create!(name: 'ソリスト')
+
+#レッスンクラスカラム記述
+# LessonClass.create!(name: 'アムールクラス')
+# LessonClass.create!(name: 'フルールクラス')
+# LessonClass.create!(name: 'ルミエールクラス')
+# LessonClass.create!(name: 'オーロラクラス')
+# LessonClass.create!(name: 'ダイヤモンドクラス')
+# LessonClass.create!(name: 'グレースクラス')
+# LessonClass.create!(name: 'エレガンスクラス')

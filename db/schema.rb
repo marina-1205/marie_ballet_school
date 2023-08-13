@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 2023_08_12_045042) do
     t.string "address", null: false
     t.string "postcode", null: false
     t.string "phone_number", null: false
+    t.string "school_name", null: false
+    t.string "post_name", null: false
     t.boolean "is_deleted", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -141,6 +143,7 @@ ActiveRecord::Schema.define(version: 2023_08_12_045042) do
     t.string "email", null: false
     t.string "address", null: false
     t.integer "reservation_date", null: false
+    t.boolean "shopping_status", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
