@@ -1,2 +1,18 @@
-<h1>Admin::LessonClasses#edit</h1>
-<p>Find me in app/views/admin/lesson_classes/edit.html.erb</p>
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col">
+      <h2>☺レッスン︎クラス編集☺︎</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <%= form_with model: @lesson_class, url: admin_lesson_class_path, method: :patch, local: true do |f| %>
+        <%= f.label :name, "クラス名" %>
+        <%= f.text_field :name, value: @lesson_class.name %>
+        <%=f.submit "変更を保存", class: "btn btn-success", style: "background-color: #dc8ba7;" %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

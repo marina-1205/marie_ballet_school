@@ -1,2 +1,39 @@
-<h1>Public::Items#show</h1>
-<p>Find me in app/views/public/items/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <!-- 検索フォーム -->
+    <div class="col-md-2">
+      <%= render 'genre_search', genres: @genres %>
+    </div>
+
+    <!-- 画像表示 -->
+    <div class="col-md-10">
+      <% if @item.image.attached? %>
+        <%= image_tag @item.image, style: "max-width: 900px;" %>
+      <% else %>
+        No image available
+      <% end %>
+      <h2><%= @item.name %></h2>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th>商品説明</th>
+            <td><%= @item.introduction %></td>
+          </tr>
+          <tr>
+            <th>ジャンル</th>
+            <td><%= @item.genre.name %></td>
+          </tr>
+          <tr>
+            <th>　価　格　</th>
+            <td><%= @item.price %>円</td>
+          </tr>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="form-action">
+        <%= link_to "Back", items_path, class: "btn btn-secondary", style: "background-color: #dc8ba7;" %>
+      </div>
+    </div>
+  </div>
+</div>

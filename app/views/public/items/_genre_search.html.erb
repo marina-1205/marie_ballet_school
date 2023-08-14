@@ -1,0 +1,14 @@
+<div class="card mb-3" style="max-width: 18rem; background-color: rgba(60, 42, 33, 0.5); color: #ffffff">
+  <div class="card-header" style="background-color: #F1D4E5; text-align: center;">❤︎ 検 索 ❤︎</div>
+  <div class="card-body" style="background-color: #ffffff; color: #FCE9F1">
+    <ul>
+      <% genres.each do |genre| %>
+        <li>
+          <%= link_to genre_path(genre) do %>
+            <%= genre.name %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -1,2 +1,58 @@
-<h1>Admin::Items#index</h1>
-<p>Find me in app/views/admin/items/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10 px-sm-0 offset-sm-1">
+      <h2>☺︎商品一覧☺︎</h2>
+      <%= link_to new_admin_item_path, class: "btn btn--circle btn--circle-c btn--shadow" do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 px-sm-0 mx-auto mb-5">
+      <table class="table text-center admin-items mb-5">
+        <thead>
+          <tr>
+            <th> 商品ID </th>
+            <th> </th>
+            <th> 商品名 </th>
+            <th> 税抜価格 </th>
+            <th> ジャンル </th>
+            <th> ステータス </th>
+          </tr>
+        </thead>
+        <% @items.each do |item| %>
+          <tbody>
+            <tr>
+              <td class="align-middle"><%= item.id %></td>
+              <td class="align-middle">
+                <%= link_to admin_item_path(item.id) do %>
+                  <%= image_tag item.get_item_image, size: "25x36" %>
+                <% end %>
+              </td>
+              <td class="text-success font-weight-bold" style="font-size: 20px;">
+                <%= link_to admin_item_path(item.id) do %>
+                  <%= item.name %>
+                <% end %>
+              </td>
+              <td class="align-middle"><%= item.price %></td>
+              <td class="align-middle"><%= item.genre.name %></td>
+              <td class="align-middle">
+                <% if item.is_available == true %>
+                  <p class="text-success font-weight-bold">レンタル可能</p>
+                <% else %>
+                  <p class="text-danger font-weight-bold">レンタル中</p>
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+        <% end %>
+      </table>
+
+      <div class="all-items-show-button d-flex justify-content-center">
+        <%= paginate @items %>
+      </div>
+
+    </div>
+  </div>
+</div>

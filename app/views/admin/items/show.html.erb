@@ -1,2 +1,44 @@
-<h1>Admin::Items#show</h1>
-<p>Find me in app/views/admin/items/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <!-- 空のdivタグ（インデント整形のため） -->
+  </div>
+
+  <div class="row">
+    <div class="col-sm-20 px-sm-0 mx-auto mb-5">
+      <h2>☺︎商品詳細☺︎</h2>
+      <% if @item.image.attached? %>
+        <%= image_tag @item.image, style: "max-width: 700px;" %>
+      <% else %>
+        No image available
+      <% end %>
+
+      <table>
+        <tr>
+          <td>商品名</td>
+          <td><%= @item.name %></td>
+        </tr>
+        <tr>
+          <td>商品説明</td>
+          <td><%= @item.introduction %></td>
+        </tr>
+        <tr>
+          <td>ジャンル</td>
+          <td><%= @item.genre.name %></td>
+        </tr>
+        <tr>
+          <td>価格</td>
+          <td>¥<%= @item.price.round %></td>
+        </tr>
+        <tr>
+          <th>販売ステータス</th>
+          <td><%= @item.is_available ? '販売中' : '販売停止中' %></td>
+        </tr>
+      </table>
+
+      <div class="form-action">
+        <%= link_to "編集", edit_admin_item_path(@item), class: "btn btn-primary", style: "background-color: #FEE3EC;" %>
+        <%= link_to "一覧に戻る", admin_items_path, class: "btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+</div>
