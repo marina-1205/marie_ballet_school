@@ -1,10 +1,9 @@
 class Admin::HomesController < ApplicationController
-  def create
+
+  before_action :authenticate_admin!
+
+  def top
+    # @orders = Order.page(params[:page]).reverse_order.per(10)
   end
 
-  def destroy
-  end
-
-  def home
-  end
 end

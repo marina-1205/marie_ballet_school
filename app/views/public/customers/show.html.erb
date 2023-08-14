@@ -36,12 +36,20 @@
             <td class="col-4 text-right">メール</td>
             <td class="col-6"><%= @customer.email %></td>
           </tr>
+          <tr class="row">
+            <td class="col-4 text-right">所属スクールまたは団体</td>
+            <td class="col-6"><%= @customer.school_name %></td>
+          </tr>
+          <tr class="row">
+            <td class="col-4 text-right">役職名</td>
+            <td class="col-6"><%= @customer.post_name %></td>
+          </tr>
         </tbody>
       </table>
 
       <table class="table table-borderless" style="width: 60%;">
         <tr class="row ml-2">
-          <th class="col-3">注文履歴一覧</th>
+          <th class="col-3">レンタル履歴一覧</th>
           <td><%= link_to '一覧を見る', orders_path(@customer), class: "btn btn-outline-secondary", style: "background-color: #F8E8EE;" %></td>
         </tr>
       </table>

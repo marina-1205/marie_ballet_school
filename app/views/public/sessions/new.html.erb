@@ -7,7 +7,7 @@
    <table class = "table table-borderless">
     <tr class = "row">
      <td class = "col-1"></td>
-     <td class = "col-4 text-center">会員の方はこちらからログイン</td>
+     <td class = "col-4 text-center"><strong>会員の方はこちらからログイン☺</strong>︎</td>
      <td></td>
     </tr>
     <tr>
@@ -17,12 +17,12 @@
     </tr>
     <tr class = "row">
      <td class = "col-2"></td>
-     <td class = "col-2 text-left"><%= f.label :email %></td>
+     <td class = "col-2 text-left"><%= f.label :メールアドレス %></td>
      <td class = "col-6 text-left"><%= f.email_field :email, autofocus: true, autocomplete: "email", :size => "50" %></td>
     </tr>
     <tr class = "row">
      <td class = "col-2"></td>
-     <td class = "col-2 text-left"><%= f.label :password %></td>
+     <td class = "col-2 text-left"><%= f.label :パスワード %></td>
      <td class = "col-6 text-left"><%= f.password_field :password, autocomplete: "current-password", :size => "50" %></td>
     </tr>
     <tr class = "row">
@@ -36,17 +36,8 @@
      <td></td>
      <td></td>
     </tr>
-    <tr class = "row">
-     <td class = "col-1"></td>
-     <td class = "col-4 text-center"><b>会員登録がお済みでない方</b></td>
-     <td></td>
-    </tr>
-    <tr class = "row">
-     <td class = "col-2"></td>
-     <td class = "col-4"><%= link_to "こちら", new_customer_registration_path %>から新規登録を行ってください。</td>
-     <td></td>
-    </tr>
    </table>
+    <div><strong>会員登録がお済みでない方は</strong>は<strong><%= link_to "こちら", new_customer_registration_path %></strong>から新規登録を行ってください。</div>
   </div>
  </div>
 </div>

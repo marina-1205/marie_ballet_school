@@ -1,31 +1,34 @@
-<div class="container">
-  <div class="row my-3">
-    <div class="col-sm-8 px-sm-0 offset-sm-1">
-      <h2>管理者ログイン</h2>
+<div class = "container" style = "text-center">
+  <div class = "row" style = "padding: 30px;">
+    <div class = "col text-center">
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <table class = "table table-borderless">
+        <tr class = "row">
+          <td class = "col-1"></td>
+          <td class = "col-2 text-center" ><strong>管理者ログイン☺︎</strong></td>
+          <td></td>
+        </tr>
+
+        <tr class = "row">
+          <td class = "col-2"></td>
+          <td class = "col-2 text-left"><%= f.label :メールアドレス %></td>
+          <td class = "col-4 text-left"><%= f.email_field :email, autofocus: true, autocomplete: "email", :size => "50" %></td>
+        </tr>
+
+        <tr class = "row">
+          <td class = "col-2"></td>
+          <td class = "col-2 text-left"><%= f.label :パスワード %></td>
+          <td class = "col-4 text-left"><%= f.password_field :password, autocomplete: "current-password", :size => "50" %></td>
+        </tr>
+
+        <tr class = "row">
+          <td class = "col-2"></td>
+          <td class = "col-2"></td>
+          <td class = "col-4 text-left"><%= f.submit "ログイン", class: "btn btn-primary", style: "background-color: #dc8ba7;" %></td>
+          <% end %>
+        </tr>
+      </table>
     </div>
   </div>
-  
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="row">
-      <div class="col-sm-3 px-sm-0 offset-sm-1">
-        <%= f.label "メールアドレス" %>
-      </div>
-      <div class="col-sm-3 px-sm-0">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3 px-sm-0 offset-sm-1">
-        <%= f.label "パスワード" %>
-      </div>
-      <div class="col-sm-3 px-sm-0">
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3 px-sm-0 offset-sm-4">
-        <%= f.submit "ログイン", class: "btn btn-success", style: "background-color: #dc8ba7;"  %>
-      </div>
-    </div>
-  <% end %>
 </div>
