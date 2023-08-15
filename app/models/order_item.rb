@@ -8,7 +8,7 @@ class OrderItem < ApplicationRecord
 
   # 税込価格から数量を計算して小計をだすメソッド
   def subtotal
-    (item.taxin_price * quantity.to_i).to_i
+    (item.price * quantity.to_i).to_i
   end
 
 end

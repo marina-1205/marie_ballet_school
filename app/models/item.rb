@@ -11,16 +11,6 @@ class Item < ApplicationRecord
     cart_item ? cart_item.quantity : 0
   end
 
-  # 税込価格を計算するメソッド
-  def taxin_price
-    (price * BigDecimal('1.1')).to_i
-  end
-
-  # 税込価格から数量を計算して小計をだすメソッド
-  def subtotal
-    (item.taxin_price * quantity.to_i).to_i
-  end
-
   has_one_attached :image
 
   def get_item_image

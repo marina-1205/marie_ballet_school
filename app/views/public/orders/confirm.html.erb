@@ -1,2 +1,80 @@
-<h1>Public::Orders#confirm</h1>
-<p>Find me in app/views/public/orders/confirm.html.erb</p>
+<div class="container">
+  <h2 class="col-3 text-center">注文情報確認☺︎</h2>
+  <div class="row">
+    <div class="col-10">
+
+      <table class="table table-bordered table-secondary">
+        <thead style="color: #FFF; font-weight: bold; background:#EAC7C7;">
+          <tr>
+            <th>商品名</th>
+            <th>単価（税込）</th>
+            <th>数量</th>
+            <th>小計</th>
+          </tr>
+        </thead>
+        <% @cart_items.each do |cart_item| %>
+          <tbody>
+            <tr>
+              <td>
+                <%= image_tag cart_item.item.get_item_image, size: "248x200" %>
+                <%= cart_item.item.name %>
+              </td>
+              <td class="text-center"><%= cart_item.item.price.to_s(:delimited) %>円</td>
+              <td><%= cart_item.quantity %>個</td>
+              <td><%= (cart_item.item.price * cart_item.quantity).to_s(:delimited) %>円</td>
+            </tr>
+          <% end %>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <table class="table table-borderless">
+      <tr>
+        <td class="col-5"><strong>支払い方法</strong></td>
+        <td class="col-12">
+          <%= @order.payment_method_i18n %>
+        </td>
+      </tr>
+      <tr>
+        <td class="col-5"><strong>お届け先</strong></td>
+        <td class="col-12">
+          〒<%= @order.postcode %>
+          <%= @order.address %><br>
+          <%= @order.name %>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h4 class="col-5 text-center" style="background-color:lightgray">請求金額</h4>
+      <table class="table table-bordered table-condensed">
+        <tbody>
+          <tr>
+            <td>商品合計: <%= @total_amount.to_s(:delimited) %>円</td>
+            <td>送料: <%= @order.postage.to_s(:delimited) %>円</td>
+            <td>請求金額: <%= @order.total_amount.to_s(:delimited) %>円</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--Viewページで一時的見ている情報を保存するためにコントローラーに送る-->
+      <%= form_with model: @order, url: orders_path, method: :post  do |f| %>
+        <!--どのカラムにどのデータを保存したいかを指定-->
+        <%= f.hidden_field :name, :value => @order.name %>
+        <%= f.hidden_field :postcode, :value => @order.postcode %>
+        <%= f.hidden_field :address, :value => @order.address %>
+        <%= f.hidden_field :postage, :value => @order.postage %>
+        <%= f.hidden_field :total_amount, :value => @order.total_amount %>
+        <%= f.hidden_field :payment_method, :value => @order.payment_method %>
+
+        <div class="col text-center">
+          <%= f.submit '注文を確定する', data: { confirm: "注文確定をします よろしいですか？" }, class: 'btn btn btn-secondary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

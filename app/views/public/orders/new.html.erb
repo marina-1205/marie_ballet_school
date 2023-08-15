@@ -1,2 +1,36 @@
-<h1>Public::Orders#new</h1>
-<p>Find me in app/views/public/orders/new.html.erb</p>
+<div class="container mt-5">
+  <%= flash[:alert] %>
+  <div class="row mt-5">
+    <h4 style="background:#EAC7C7;">注文情報入力</h4>
+  </div>
+
+  <%= form_with model: @order, url: confirm_orders_path, method: :post do |f| %>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <h5>支払方法</h5>
+            <!--Orderモデルに記述した内容を持ってきている。こちらに来る時に複数形に変える-->
+            <!-- クレジットカード支払いのラジオボタン -->
+            <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
+            <!-- :payment_method_credit_cardは上のボタンと関連づけるための名前に変える -->
+            <%= f.label :payment_method_credit_card, Order.payment_methods_i18n[:credit_card] %><br>
+            <!-- 銀行振り込み支払いのラジオボタン -->
+            <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
+            <%= f.label :payment_method_credit_card, Order.payment_methods_i18n[:transfer] %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <h5>お届け先</h5>
+            〒<%= current_customer.postcode %><%= current_customer.address %><br>
+            <%= current_customer.last_name %><%= current_customer.first_name %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 注文確認画面に進むためのボタン -->
+    <%= f.submit "確認画面へ進む" %>
+  <% end %>
+</div>
