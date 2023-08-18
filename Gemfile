@@ -65,5 +65,3 @@ gem "enum_help"
 gem 'kaminari'
 #rails cで使用
 gem 'pry-rails'
-#検索フォーム
-gem 'ransack'

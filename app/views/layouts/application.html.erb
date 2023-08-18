@@ -20,7 +20,7 @@
   <body class="min-vh-100">
   <header>
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="/"><%= image_tag "logo2.jpg", :size => "120x120" %></a>
+      <!--<a class="navbar-brand" href="/">%= image_tag "logo2.jpg", :size => "120x120" %></a>-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -112,13 +112,13 @@
         </ul>
       </div>
     </nav>
-    <div class="search @query text-right" >
-      <%= search_form_for @q, url: search_path, scope: :post, local: true do |f| %>
+    <!--<div class="search @query text-right" >-->
+    <!--  %= search_form_for @q, url: search_path, scope: :post, local: true do |f| %>-->
         <!--name_con t= nameカラムの部分一致/name_eq = nameカラムの完全一致-->
-        <%= f.search_field :name_cont, placeholder: "キーワード検索" %>
-        <% f.submit %>
-      <% end %>
-    </div>
+    <!--    %= f.search_field :name_cont, placeholder: "キーワード検索" %>-->
+    <!--    % f.submit %>-->
+    <!--  % end %>-->
+    <!--</div>-->
 
   </header>
 

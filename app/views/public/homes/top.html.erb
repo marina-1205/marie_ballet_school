@@ -50,19 +50,19 @@
   </div>
 </div>
 
-<!--<div class="container text-center">-->
-<!--  <h2>新着商品</h2>-->
+<div class="container text-center">
+  <h2>新着商品</h2>
 
-<!--  <ul class="new-item">-->
-<!--    % @items.each do |item| %>-->
-<!--      <li class="item">-->
-<!--        %= link_to item_path(item) do %>-->
-<!--          %= image_tag item.get_item_image, size: "300x200" %>-->
-<!--          <h3>%= item.name %></h3> <!-- 商品の名前を表示 -->
-<!--        % end %>-->
-<!--      </li>-->
-<!--    % end %>-->
-<!--  </ul>-->
+  <ul class="new-item">
+    <% @items.each do |item| %>
+      <li class="item">
+        <%= link_to item_path(item) do %>
+          <%= image_tag item.get_item_image, size: "150x200" %>
+          <h3><%= item.name %></h3> <!-- 商品の名前を表示 -->
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 
-<!--  <div class="all-items-show-button">%= link_to "全ての商品をみる", items_path %></div>-->
-<!--</div>-->
+  <div class="all-items-show-button"><%= link_to "全ての商品をみる", items_path %></div>
+</div>

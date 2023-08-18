@@ -16,7 +16,7 @@
             <th> 商品ID </th>
             <th> </th>
             <th> 商品名 </th>
-            <th> 税抜価格 </th>
+            <th> 価格 </th>
             <th> ジャンル </th>
             <th> ステータス </th>
           </tr>
@@ -35,7 +35,7 @@
                   <%= item.name %>
                 <% end %>
               </td>
-              <td class="align-middle"><%= item.price %></td>
+              <td class="align-middle"><%= number_with_delimiter(item.price, delimiter: ',') %></td>
               <td class="align-middle"><%= item.genre.name %></td>
               <td class="align-middle">
                 <% if item.is_available == true %>

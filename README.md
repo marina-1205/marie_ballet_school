@@ -38,7 +38,6 @@
 ・devise(登録/退会/ログイン/ログアウト)<br>
 ・enum-help(ステータス関連)<br>
 ・kaminari(ページネーション)<br>
-・ransack(キーワード検索)<br>
 ・jp-prefecture(住所自動反映）<br>
 ・better-errors（エラー表示）<br>
 
