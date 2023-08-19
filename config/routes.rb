@@ -32,9 +32,9 @@ Rails.application.routes.draw do
     
     resources :genres, only: [:show]
     resources :items, only: [:index]
+    resources :reserves, only: [:new, :complete]
     get '/items/:id', to: 'items#show', as: 'item'
     resource :customers, only: [:new, :create, :show, :edit, :update]
-    resources :addresses, only: [:new, :index, :create, :edit, :update, :destroy]
     
     get "search" => "searches#search"
 
