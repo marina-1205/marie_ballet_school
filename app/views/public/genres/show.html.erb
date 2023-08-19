@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="item-index-box">
+        <div class="item-index">
+          <h3 class="text-center">商品検索結果♡</h3>
+          <table class="table">
+            <tbody class="text-center">
+              <% @genre.items.each_slice(5) do |items_group| %>
+                <tr>
+                  <% items_group.each do |item| %>
+                    <td class="item">
+                      <%= link_to item_path(item) do %>
+                        <%= image_tag item.get_item_image, size: "160x200" %><br>
+                        <%= item.name %><br>
+                        ￥<%= (item.price * 1.1).round %>
+                      <% end %>
+                    </td>
+                  <% end %>
+                  <% (5 - items_group.size).times do %>
+                    <td></td>
+                  <% end %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
