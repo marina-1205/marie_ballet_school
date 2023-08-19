@@ -14,12 +14,11 @@
 <% else %>
   <p class="text-center">No image available</p>
 <% end %>
->
 
 
       <table>
         <tr>
-          <td>商品名</td>
+          <td>商 品 名</td>
           <td><%= @item.name %></td>
         </tr>
         <tr>
@@ -31,12 +30,12 @@
           <td><%= @item.genre.name %></td>
         </tr>
         <tr>
-          <td>価格</td>
+          <td>価　格</td>
           <td class="align-middle"><%= number_to_currency(@item.price, unit: '¥', format: '%u%n', delimiter: ',') %></td>
         </tr>
         <tr>
-          <th>販売ステータス</th>
-          <td><%= @item.is_available ? '販売中' : '販売停止中' %></td>
+          <th>レンタル状況</th>
+          <td><%= @item.is_available ? 'レンタル可能' : 'レンタル停止中' %></td>
         </tr>
       </table>
 

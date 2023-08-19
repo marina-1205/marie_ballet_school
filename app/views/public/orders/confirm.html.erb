@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-10">
 
-      <table class="table table-bordered table-secondary">
+      <table class="table table-bordered table-bordered">
         <thead style="color: #FFF; font-weight: bold; background:#EAC7C7;">
           <tr>
             <th>商品名</th>
@@ -16,7 +16,7 @@
           <tbody>
             <tr>
               <td>
-                <%= image_tag cart_item.item.get_item_image, size: "248x200" %>
+                <%= image_tag cart_item.item.get_item_image, size: "160x200" %>
                 <%= cart_item.item.name %>
               </td>
               <td class="text-center"><%= cart_item.item.price.to_s(:delimited) %>円</td>
@@ -40,9 +40,8 @@
       <tr>
         <td class="col-5"><strong>お届け先</strong></td>
         <td class="col-12">
-          〒<%= @order.postcode %>
-          <%= @order.address %><br>
-          <%= @order.name %>
+            〒<%= current_customer.postcode %><%= current_customer.address %><br>
+            <%= current_customer.last_name %><%= current_customer.first_name %>
         </td>
       </tr>
     </table>

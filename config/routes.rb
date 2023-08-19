@@ -31,7 +31,8 @@ Rails.application.routes.draw do
     patch '/customers/withdraw' => 'customers#withdraw'
     
     resources :genres, only: [:show]
-    resources :items, only: [:index, :show]
+    resources :items, only: [:index]
+    get '/items/:id', to: 'items#show', as: 'item'
     resource :customers, only: [:new, :create, :show, :edit, :update]
     resources :addresses, only: [:new, :index, :create, :edit, :update, :destroy]
     
@@ -41,6 +42,7 @@ Rails.application.routes.draw do
       # データ全体に行いたいのでcollection
       collection do
         post 'confirm'
+        get 'confirm' => "orders#get_confirm"
         get 'completed'
       end
     end

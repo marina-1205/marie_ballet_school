@@ -1,3 +1,38 @@
 // Place all the styles related to the public/items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.genre-list {
+  padding: 100px 10px 10px;
+  max-height: 350px; /* 適切な高さを設定してください */
+}
+
+.card {
+  height: 100%;
+}
+
+ /* 商品画像を大きくするスタイル */
+.card:hover  {
+  transform: scale(1.2); /* 1.2倍のサイズに拡大 */
+  transition: transform 0.3s ease; /* アニメーションの速さとタイミングを設定 */
+}
+
+img {
+    border-radius: 10px; /* 画像の角を丸くする */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影の追加 */
+}
+
+.container {
+    margin-top: 20px; /* 上部の余白 */
+    margin-bottom: 20px; /* 下部の余白 */
+}
+
+.btn {
+    background-color: #ff80ab; /* ボタンの背景色 */
+    color: white; /* ボタンのテキストカラー */
+    border: none;
+}
+
+.btn:hover {
+    background-color: #ff3377; /* ホバーエフェクトの背景色 */
+}

@@ -6,7 +6,7 @@
   <div class="container">
     <div class="row py-3 px-5">
       <div class="text-start design">
-        <h2 style="background-color:#D5B4B4">ショッピングカート</h2>
+        <h2>ショッピングカート</h2>
       </div>
       <div class="ml-auto">
         <%= link_to 'カートを空にする', clear_cart_items_path, method: :delete, class: "btn btn-secondary" %>
@@ -17,8 +17,8 @@
   <div class="container">
     <div class="row">
       <div class="col-12 text-start">
-        <table class="table table-bordered table-secondary">
-          <thead style="color: #FFF; font-weight: bold; background:#EAC7C7;">
+        <table class="table table-bordered table-bordered">
+          <thead style="color:#967E76; font-weight: bold; background:#EAC7C7;">
             <th>商品名</th>
             <th>単価(税込)</th>
             <th>数量</th>
@@ -29,33 +29,37 @@
             <% @cart_items.each do |cart_item| %>
               <tr>
                 <td>
-                  <%= image_tag cart_item.item.get_item_image, size: "248x200" %>
-                  <%= cart_item.item.name %>
+                  <div class="text-center">
+                    
+                    <%= image_tag cart_item.item.get_item_image, size: "170x200" %>
+                  <br><strong><%= cart_item.item.name %></strong>
+                  
+                  </div>
                 </td>
-                <td><%= cart_item.item.taxin_price.to_s(:delimited) %>円</td>
+                <td><div class="text-center"><%= cart_item.item.price.to_s(:delimited) %>円</div></td>
                 <td>
-                  <%= form_with model: cart_item, url: cart_item_path(cart_item), method: :patch do |f| %>
+                  <div class="text-center"><%= form_with model: cart_item, url: cart_item_path(cart_item), method: :patch do |f| %>
                     <%= f.hidden_field :customer_id, value: current_customer.id %>
                     <%= f.hidden_field :item_id, value: cart_item.item.id %>
                     <!-- 数量変更 -->
                     <%= f.select :quantity, (1..50).to_a, {} %>
                     <%= f.submit "変更" %>
                   <% end %>
+                  </div>
                 </td>
                 <td><%= cart_item.subtotal.to_s(:delimited) %>円</td>
                 <td>
-                  <%= link_to '削除', cart_item_path(cart_item), method: :delete, class: "btn btn-secondary", data: { confirm: "本当に削除しますか？" } %>
+                  <div class="text-center"><%= link_to '削除', cart_item_path(cart_item), method: :delete, class: "btn btn-secondary", data: { confirm: "本当に削除しますか？" } %></div>
                 </td>
               </tr>
             <% end %>
           </tbody>
         </table>
-
-        <div><%= link_to '買い物を続ける', items_path , class: "btn btn-secondary" %></div>
+        
         <table>
           <tbody>
             <tr>
-              <table class="table ml-auto table-bordered col-3 table-secondary">
+              <table class="table ml-auto table-bordered col-3 table-bordered">
                 <tbody>
                   <th style="font-weight: bold; background:#EAC7C7;">合計金額</th>
                   <td><%= @total_amount.to_s(:delimited) %>円</td>
@@ -66,13 +70,20 @@
         </tbody>
       </table>
 
+
       <div class="row py-3">
-        <div class="col text-center">
-          <div>
-            <button class="btn btn-lg custom-button"><%= link_to '情報入力へ進む', new_order_path, class: "btn btn-secondary" %></button>
-          </div>
-        </div>
+  <div class="col text-center">
+    <div class="d-flex justify-content-center"> <!-- ボタンを中央揃えにするためのクラスを追加 -->
+      <div class="mx-2"> <!-- ボタン間の間隔を調整するためのクラスを追加 -->
+        <%= link_to '買い物を続ける', items_path, class: "btn btn-secondary" %>
       </div>
+      <div class="mx-2">
+        <%= link_to '情報入力へ進む', new_order_path, class: "btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
   </div>
 <% end %>
