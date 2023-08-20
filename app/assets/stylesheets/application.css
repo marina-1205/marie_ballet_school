@@ -46,12 +46,13 @@ main {
 footer {
   width: 100%;
   background-color:#F8E8EE;
-  /*padding: 5px;*/
   margin: 0;
 }
 
-/* リンクの文字色・背景色・カーソル時の色変更*/
-/*!importantは推奨されない使い方です*/
+.h1 .h2 .h3 .h4 .h5{
+  padding: 10px;
+}
+
 .page-link {
   background-color: #F7DBF0!important;
 }

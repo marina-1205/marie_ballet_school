@@ -7,9 +7,9 @@
     </div>
 
     <!-- 商品詳細表示 -->
-    <div class="col-md-9">
+    <div class="text-center col-md-8">
       <% if @item.image.attached? %>
-        <%= image_tag @item.image, style: "max-width: 900px;" %>
+        <%= image_tag @item.image, style: "width: 600px;" %>
       <% else %>
         No image available
       <% end %>

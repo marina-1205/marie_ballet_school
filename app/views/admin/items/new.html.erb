@@ -55,12 +55,12 @@
               <td>
                 <div class="form-check form-check-inline">
                   <%= f.radio_button :is_available, true, class: 'form-check-input' %>
-                  <%= f.label :is_available, '販売中', class: 'form-check-label' %>
+                  <%= f.label :is_available, 'レンタル可能', class: 'form-check-label' %>
                 </div>
 
                 <div class="form-check form-check-inline">
                   <%= f.radio_button :is_available, false, class: 'form-check-input' %>
-                  <%= f.label :is_available, '販売停止中', class: 'form-check-label' %>
+                  <%= f.label :is_available, 'レンタル中', class: 'form-check-label' %>
                 </div>
               </td>
             </div>

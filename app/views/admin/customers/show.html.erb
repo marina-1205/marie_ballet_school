@@ -1,2 +1,62 @@
-<h1>Admin::Customers#show</h1>
-<p>Find me in app/views/admin/customers/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <h4 class="col-7 text-center" ><%= @customer.full_name %>様の会員詳細☺︎</h4>
+  </div>
+  <table class="table table-bordered" style="width: 60%;">
+    <tbody>
+      <tr>
+        <th class="col-3">会員ID</th>
+        <td class="col-9"><%= @customer.id %></td>
+      </tr>
+
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">氏名</th>
+        <td class="col-9"><%= @customer.last_name %><%= @customer.first_name %></td>
+      </tr>
+
+      <tr>
+        <th class="col-3">フリガナ</th>
+        <td class="col-9"><%= @customer.last_kana_name %><%= @customer.first_kana_name %></td>
+      </tr>
+
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">郵便番号</th>
+        <td class="col-9"><%= @customer.postcode %></td>
+      </tr>
+
+      <tr>
+        <th class="col-3">住所</th>
+        <td class="col-9"><%= @customer.address %></td>
+      </tr>
+
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">電話番号</th>
+        <td class="col-9"><%= @customer.phone_number %></td>
+      </tr>
+
+      <tr>
+        <th class="col-3">メールアドレス</th>
+        <td class="col-9"><%= @customer.email %></td>
+      </tr>
+
+      <tr>
+        <th class="col-3">所属先・役職</th>
+        <td class="col-9"><%= @customer.school_name %>・<%= @customer.post_name %></td>
+      </tr>
+
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">会員ステータス</th>
+        <td class="col-9"><%= @customer.is_deleted ? '退会' : '有効' %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="row mt-3">
+    <div class="col-3">
+      <%= link_to "編集する", edit_admin_customer_path(@customer.id), class: "btn btn-outline-secondary btn-block" %>
+    </div>
+    <div class="col-3">
+      <%= link_to "注文履歴一覧に戻る", admin_path, class: "btn btn-outline-secondary btn-block" %>
+    </div>
+  </div>
+</div>

@@ -69,7 +69,7 @@
 <% @items.each do |item| %>
   <li class="text-center slide-item2 d-inline-block"> 
     <%= link_to item_path(item) do %>
-      <p class="caption mx-2"><%= image_tag item.image, format: 'jpeg', size: '300x400' %></p>
+      <p class="caption mx-2"><%= image_tag item.image, format: 'jpeg', size: '300x300' %></p>
     <% end %>
     <p class="caption"><strong><%= item.name %></strong></p>
     <p class="caption">¥<%= item.price.to_s(:delimited) %></p>
