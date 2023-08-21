@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col">
        <div class="col-12 text-center"><%= image_tag "goodjob.jpg", size: "1000x350" %></div>
        <br>
-      <h4 class="col-12 text-center">注文履歴一覧</h4>
+  <div class="col">
+      <h4 class="col-12 text-center">レンタル注文履歴</h4>
       <div class="table-responsive">
         <table class="table table-sm custom-table table-bordered">
           <thead style="color: #FFF; font-weight: bold; background:#D5B4B4;">
@@ -26,12 +26,39 @@
           </tbody>
         </table>
       </div>
-    </div>
+    <p class="text-center mt-5">
+      <a href="<%= admin_orders_path %>" class="link">すべての履歴を見る</a>
+    </p>
+  </div>
+  
+   <div class="col">
+      <h4 class="col-12 text-center">レッスン体験予約</h4>
+      <div class="table-responsive">
+        <table class="table table-sm custom-table table-bordered">
+          <thead style="color: #FFF; font-weight: bold; background:#D5B4B4;">
+            <tr>
+              <th>予約日時</th>
+              <th>予約者</th>
+              <th>希望日</th>
+              <th>予約ステータス</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @reserves.each do |reserve| %>
+              <tr>
+                <td><%= link_to reserve.created_at.strftime('%Y/%m/%d'), admin_reserves_path(reserve) %></td>
+                <td><%= reserve.last_name %><%= reserve.first_name %> 様</td>
+                <td><%= reservation_date %>個</td>
+                <td><%= reserve.status_i18n %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <p class="text-center mt-5">
+      <a href="<%= admin_reserves_path %>" class="link">すべての体験予約を見る</a>
+    </p>
   </div>
 
-  <div class="col-3 mx-auto">
-    <strong>
-      <%= paginate @orders %>
-    </strong>
   </div>
 </div>

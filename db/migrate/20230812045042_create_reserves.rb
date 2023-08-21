@@ -11,7 +11,8 @@ class CreateReserves < ActiveRecord::Migration[6.1]
       t.string :email, null: false
       t.string :address, null: false
       t.integer :reservation_date, null: false
-      t.boolean :shopping_status, default: true, null: false
+      t.integer :lesson_class_id, null: false
+      t.boolean :reservation_status, default: true, null: false
 
       t.timestamps
     end

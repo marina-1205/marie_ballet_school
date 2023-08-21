@@ -8,7 +8,7 @@ class Admin::LessonClassesController < ApplicationController
     @lesson_class = LessonClass.new(genre_params)
     @lesson_classes = LessonClass.all
     if @lesson_class.save
-      redirect_to admin_lesson_classes_path, notice:"ジャンル名を追加しました"
+      redirect_to admin_lesson_classes_path, notice:"レッスンクラスを追加しました"
     else
       render :index
     end
@@ -21,7 +21,7 @@ class Admin::LessonClassesController < ApplicationController
   def update
     @lesson_class = LessonClass.find(params[:id])
     if @lesson_class.update(lesson_class_params)
-     redirect_to admin_lesson_classes_path, notice:"ジャンル名を変更しました。"
+     redirect_to admin_lesson_classes_path, notice:"レッスンクラスを変更しました。"
     else
      render :edit
     end

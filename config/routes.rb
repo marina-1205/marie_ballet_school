@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :edit, :update]
     resources :genres, only: [:index, :edit, :create, :update]
     resources :items, only: [:index, :show, :edit, :create, :update, :new]
-    resources :orders, only: [:show, :update]
+    resources :orders, only: [:index, :show, :update]
     resources :order_items, only: [:update]
     resources :reserves, only: [:index, :show]
     resources :lesson_classes, only: [:index, :edit, :create, :update]
@@ -29,15 +29,20 @@ Rails.application.routes.draw do
     patch '/customers/infomation' => 'customers#update'
     get 'customers/confirm_withdraw' => 'customers#confirm_withdraw'
     patch '/customers/withdraw' => 'customers#withdraw'
-    
     resources :genres, only: [:show]
     resources :items, only: [:index]
     get '/items/:id', to: 'items#show', as: 'item'
-    resources :reserves, only: [:new]
-    get 'reserves/complete' => 'reserves#complete'
+    
     resource :customers, only: [:new, :create, :show, :edit, :update]
     
     get "search" => "searches#search"
+    
+    get 'reserves' => 'reserves#new'
+    resources :reserves, only: [:create,] do
+    collection do
+      get :complete
+    end
+  end
 
     resources :orders, only: [:new, :create, :index, :show] do
       # データ全体に行いたいのでcollection

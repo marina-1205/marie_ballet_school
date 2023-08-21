@@ -20,7 +20,7 @@ class Admin::OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.all
+    @orders = Order.page(params[:page]).reverse_order.per(10)
   end
 
   private

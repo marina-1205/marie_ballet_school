@@ -15,9 +15,12 @@
             <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
             <!-- :payment_method_credit_cardは上のボタンと関連づけるための名前に変える -->
             <%= f.label :payment_method_credit_card, Order.payment_methods_i18n[:credit_card] %><br>
-            <!-- 銀行振り込み支払いのラジオボタン -->
+
             <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
-            <%= f.label :payment_method_credit_card, Order.payment_methods_i18n[:transfer] %>
+            <%= f.label :payment_method_transfer, Order.payment_methods_i18n[:transfer] %><br>
+
+            <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
+            <%= f.label :paypay, Order.payment_methods_i18n[:paypay] %><br>
           </td>
         </tr>
         <tr>
