@@ -48,8 +48,8 @@
               <tr>
                 <td><%= link_to reserve.created_at.strftime('%Y/%m/%d'), admin_reserves_path(reserve) %></td>
                 <td><%= reserve.last_name %><%= reserve.first_name %> 様</td>
-                <td><%= reservation_date %>個</td>
-                <td><%= reserve.status_i18n %></td>
+                <td><%= reserve.reservation_date %></td>
+                <td><%#= reserve.status_i18n %></td>
               </tr>
             <% end %>
           </tbody>

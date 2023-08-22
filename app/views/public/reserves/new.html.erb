@@ -9,7 +9,8 @@
         レンタルされない方は動きやすい服装で参加お願いします。<br>
         もちろん見学のみの予約も可能ですよ♪<br>
         開始時間の１０分前にはお越しいただくようにお願いいたします。<br>
-        お気軽に参加してくださいね♡
+        お気軽に参加してくださいね♡<br>
+        電話からの予約も可能です♪　TEL:092-xxx-xxx</strong><br>
   </div>
 </div>
 <% if @reserve.errors.any? %>
@@ -24,6 +25,7 @@
 <% end %>
  <div class = "col text-center">
       <h3 class = "col-4 text-center">体験レッスン予約☺︎</h3>
+      
       <div "col-4 text-center">全てのフォームにご入力後、ご送信をお願いします。</div>
       <br>
      <%= form_with model: @reserve do |f| %>
@@ -82,7 +84,8 @@
           <td class="col-3"><%= f.label :希望日 %></td>
           <td class="col-1 text-right"></td>
           <td class="col-2 text-left">
-          <%= f.date_select :reservation_date, { prompt: "--選択してください--", default: Date.new(2023, 1, 1) }, { autofocus: true, autocomplete: "希望日" } %>
+          <%#= f.date_select :reservation_date, { prompt: "--選択してください--", default: Date.new(2023, 1, 1) }, { autofocus: true, autocomplete: "希望日" } %>
+          <%= f.text_field :reservation_date, placeholder:"please inpute date", autofocus: true %>
          </td>
          <td></td>
          <td></td>
@@ -102,3 +105,4 @@
     </div>
   </div>
 </div>
+

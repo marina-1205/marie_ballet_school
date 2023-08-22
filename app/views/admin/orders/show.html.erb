@@ -24,8 +24,8 @@
             <td>配送先</td>
             <td>
               <!-- 配送先情報 -->
-              〒<%= @order.postcode %>
-              <%= @order.address %><br>
+              〒<%= @order.customer.postcode %>
+              <%= @order.customer.address %><br>
               <%= @order.full_name %>様
             </td>
           </tr>
@@ -65,13 +65,7 @@
               <td><%= order_item.item.price.to_s(:delimited) %>円　</td>
               <td><%= order_item.quantity %>着　</td>
               <td><%= order_item.subtotal.to_s(:delimited) %>円　</td>
-              <td>
-                <!-- 製作ステータスの更新フォーム -->
-                <%= form_with model: order_item, url: admin_order_item_path(order_item), local: true, method: :patch do |f| %>
-                  <%= f.select :make_status, OrderItem.make_statuses_i18n.invert %>
-                  <%= f.submit "更新" %>
-                <% end %>
-              </td>
+              <td></td>
             </tr>
           <% end %>
         </tbody>
@@ -94,7 +88,9 @@
           </tr>
         </tbody>
       </table>
-
+      <p class="text-center mt-5">
+      <a href="<%= admin_orders_path %>" class="link">レンタル履歴一覧に戻る</a>
+    </p>
     </div>
   </div>
 </div>

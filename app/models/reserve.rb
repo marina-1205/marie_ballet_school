@@ -1,5 +1,5 @@
 class Reserve < ApplicationRecord
-   belongs_to :lessonclass
+   belongs_to :lesson_class
    
    validates :last_name, presence: true
   validates :first_name, presence: true
