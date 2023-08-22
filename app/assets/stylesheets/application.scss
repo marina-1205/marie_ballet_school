@@ -31,7 +31,7 @@ header {
 
 body {
     position: relative;
-    background-image: image-url('background-image.jpg');
+    background-image: image-url("background-image.jpg");
     background-position: center center;
     background-repeat: repeat-y;
     background-size: auto;
@@ -50,7 +50,7 @@ footer {
 }
 
 .h1 .h2 .h3 .h4 .h5{
-  padding: 10px;
+  padding: 5px;
 }
 
 .page-link {
@@ -62,7 +62,7 @@ a {
 }
 
 a:hover {
-  color: #F675A8!important;
+  color:  #F675A8!important;
 }
 
 .mail-box {

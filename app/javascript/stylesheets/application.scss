@@ -1,1 +1,34 @@
 @use '~bootstrap/scss/bootstrap';
+//topページ
+$(document).ready(function () {
+  $('.slide-item').hide();
+  $('.slide-item:first').show();
+
+  setInterval(function () {
+    var currentSlide = $('.slide-item:visible');
+    var nextSlide = currentSlide.next('.slide-item');
+
+    if (nextSlide.length === 0) {
+      nextSlide = $('.slide-item:first');
+    }
+
+    currentSlide.fadeOut(500);
+    nextSlide.fadeIn(500);
+  }, 3000); // 3秒ごとにスライドを切り替え
+});
+
+
+// ドキュメントがロードされた後に実行
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector(".new-item-carousel");
+  const items = document.querySelectorAll(".item");
+
+  // アニメーションの開始と停止
+  carousel.addEventListener("mouseenter", function () {
+    carousel.classList.add("animating");
+  });
+
+  carousel.addEventListener("mouseleave", function () {
+    carousel.classList.remove("animating");
+  });
+});

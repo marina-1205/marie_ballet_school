@@ -1,0 +1,4 @@
+DB_USERNAME="root"
+DB_PASSWORD="marinaasuka91"
+DB_HOST="rds-mysql-server.clkj0epi098n.ap-northeast-1.rds.amazonaws.com"
+DB_DATABASE="marie_ballet_school"
