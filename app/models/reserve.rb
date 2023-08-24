@@ -1,6 +1,8 @@
 class Reserve < ApplicationRecord
    belongs_to :lesson_class
    
+    enum reservation_status: { waiting_for_reservation: false, completion_of_reservation: true }
+   
    validates :last_name, presence: true
   validates :first_name, presence: true
   validates :last_kana_name, presence: true

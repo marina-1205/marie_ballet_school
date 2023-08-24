@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :show, :edit, :create, :update, :new]
     resources :orders, only: [:index, :show, :update]
     resources :order_items, only: [:update]
-    resources :reserves, only: [:index, :show]
+    resources :reserves, only: [:index, :show, :update]
     resources :lesson_classes, only: [:index, :edit, :create, :update]
   end
 

@@ -1,0 +1,116 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/"><%= image_tag "logo.jpg", :size => "90x90" %></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+
+          <!--adminログイン時のヘッダー-->
+          <% if admin_signed_in? %>
+            <li class="nav-item">
+              <%= link_to admin_items_path, class: "nav-link" do %>
+                <i class="fas fa-chess-queen">商品</i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_customers_path, class: "nav-link" do %>
+                <i class="fas fa-address-book">会員</i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_orders_path, class: "nav-link" do %>
+                <i class="fas fa-scroll">注文</i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_genres_path, class: "nav-link" do %>
+                <i class="fas fa-paste">ジャンル</i>
+              <% end %>
+              <li class="nav-item">
+              <%= link_to admin_reserves_path, class: "nav-link" do %>
+                <i class="fas fa-scroll">予約</i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to admin_lesson_classes_path, class: "nav-link" do %>
+                <i class="fas fa-star">クラス</i>
+              <% end %>
+            </li>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link" do %>
+                <i class="fas fa-door-open">ログアウト</i>
+              <% end %>
+            </li>
+
+          <!--customersログイン時のヘッダー-->
+          <% elsif customer_signed_in? %>
+            <li class="nav-link te">
+              <strong>ようこそ<i class="fas fa-heart"></i> <%= link_to customers_path do %>
+              <%= current_customer.last_name %><%= current_customer.first_name %>
+              <% end %>
+              様</strong>
+            </li>
+            <li class="nav-item">
+              <%= link_to items_path, class: "nav-link" do %>
+                <i class="fas fa-chess-queen">商品一覧</i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to cart_items_path, class: "nav-link" do %>
+                <i class="fas fa-shopping-cart">カート</i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to reserves_path, class: "nav-link" do %>
+                <i class="fas fa-star">体験予約</i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_customer_session_path, method: :delete, class: "nav-link" do %>
+                <i class="fas fa-door-open">ログアウト</i>
+              <% end %>
+            </li>
+
+          <% else %>
+
+          <!--ログイン前時のヘッダー-->
+            <li class="nav-item">
+              <%= link_to about_path, class: "nav-link" do %>
+                <i class="fa-solid fa-heart">About</i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to items_path, class: "nav-link" do %>
+                <i class="fas fa-chess-queen">商品一覧</i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_customer_registration_path, data: { "turbolinks" => false }, class: "nav-link" do %>
+                <i class="fas fa-plus-square">新規登録</i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to reserves_path, class: "nav-link" do %>
+                <i class="fas fa-star">体験予約</i>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_customer_session_path, class: "nav-link" do %>
+                <i class="fas fa-door-open">ログイン</i>
+              <% end %>
+            </li>
+          <% end %>
+
+        </ul>
+      </div>
+    </nav>
+    <!--<div class="search @query text-right" >-->
+    <!--  %= search_form_for @q, url: search_path, scope: :post, local: true do |f| %>-->
+        <!--name_con t= nameカラムの部分一致/name_eq = nameカラムの完全一致-->
+    <!--    %= f.search_field :name_cont, placeholder: "キーワード検索" %>-->
+    <!--    % f.submit %>-->
+    <!--  % end %>-->
+    <!--</div>-->
+

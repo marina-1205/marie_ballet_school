@@ -15,11 +15,11 @@
           </thead>
           <tbody>
             <% @reserves.each do |reserve| %>
-              <tr>
-                <td><%= link_to reserve.created_at.strftime('%Y/%m/%d'), admin_reserves_path(reserve) %></td>
+              <tr><% pp reserve %>
+                <td><%= link_to reserve.created_at.strftime('%Y/%m/%d'), admin_reserf_path(reserve) %></td>
                 <td><%= reserve.last_name %><%= reserve.first_name %> 様</td>
-                <td><%= reservation_date %>個</td>
-                <td><%= reserve.status_i18n %></td>
+                <td><%= reserve.reservation_date.strftime("%Y年%m月%d日") %></td>
+                <td><%= reserve.reservation_status_i18n %></td>
               </tr>
             <% end %>
           </tbody>
@@ -29,7 +29,7 @@
       </div>
     <div class="col-3 mx-auto">
     <strong>
-      <!--%= paginate @reserves %>-->
+      <%= paginate @reserves %>
     </strong>
   </div>
   </div>

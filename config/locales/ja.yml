@@ -12,21 +12,18 @@ ja: # 日本語の設定を行う
         credit_card: "クレジットカード"
         transfer: "銀行振込"
         paypay: "paypay"
-      #注文ステータス日本語設定
+      #発送ステータス日本語設定
       status:
         waiting_for_payment: "入金待ち"
         confirmation_of_payment: "入金確認"
         in_production: "準備中"
         preparing_to_ship: "発送準備中"
         shipped: "発送済み"
-    #製作ステータス日本語設定
-    order_item:
-      make_status:
-        production_status:
-        unable_to_start: "着手不可"
-        waiting_for_production: "製作待ち"
-        in_production: "製作中"
-        completion_of_production: "制作完了"
+    #予約ステータス日本語設定
+    reserve:
+      reservation_status:
+        waiting_for_reservation: "未対応"
+        completion_of_reservation: "対応済み"
         #deviseの翻訳
  #jaの記述はファイルに一つ・インデントがずれていると翻訳が効かない
   activerecord:

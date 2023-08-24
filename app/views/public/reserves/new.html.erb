@@ -2,8 +2,8 @@
   <div class="row">
     <div class="text-center">
       <div class="image-container">
-        <%= image_tag "lesson.jpg", size: "900x500", class: "img-fluid mx-auto" %>
-        <div class="image-overlay">
+        <%= image_tag "lesson.jpg", size: "1200x600", class: "img-fluid mx-auto" %>
+        <div class="reserve-image-overlay">
         ❤︎体験レッスンについて❤︎<br>
         体験レッスンに参加の際は、無料でレオタードをレンタル可能です。<br>
         レンタルされない方は動きやすい服装で参加お願いします。<br>
@@ -80,16 +80,16 @@
           <td></td>
           <td></td>
         </tr>
-        <!--<tr class="row">-->
-        <!--  <td class="col-3">%= f.label :希望日 %></td>-->
-        <!--  <td class="col-1 text-right"></td>-->
-        <!--  <td class="col-2 text-left">-->
-          <%#= f.date_select :reservation_date, { prompt: "--選択してください--", default: Date.new(2023, 1, 1) }, { autofocus: true, autocomplete: "希望日" } %>
-        <!--  %= f.text_field :reservation_date, placeholder:"please inpute date", autofocus: true %>-->
-        <!-- </td>-->
-        <!-- <td></td>-->
-        <!-- <td></td>-->
-        <!--</tr>-->
+        <tr class="row">
+          <td class="col-3"><%= f.label :希望日 %></td>
+          <td class="col-1 text-right"></td>
+          <td class="col-2 text-left">
+            
+                    <%= f.date_field :reservation_date, placeholder:"please inpute date", autofocus: true %>
+         </td>
+         <td></td>
+         <td></td>
+        </tr>
         <tr class="row">
           <td class="col-3"></td>
           <td class="col-1 text-right"></td>
@@ -105,4 +105,3 @@
     </div>
   </div>
 </div>
-

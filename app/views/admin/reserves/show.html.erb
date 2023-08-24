@@ -1,1 +1,56 @@
+<div class="container">
+  <div class="row">
+    <h4 class="col-7 text-center" >体験レッスン予約情報<%= @reserve.id %>☺︎</h4>
+  </div>
+  <table class="table table-bordered" style="width: 60%;">
+    <tbody>
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">氏名</th>
+        <td class="col-9"><%= @reserve.last_name %><%= @reserve.first_name %></td>
+      </tr>
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">フリガナ</th>
+        <td class="col-9"><%= @reserve.last_kana_name %><%= @reserve.first_kana_name %></td>
+      </tr>
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">希望クラス</th>
+        <td class="col-9"><%= @reserve.lesson_class.name %></td>
+      </tr>
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">体験者年齢</th>
+        <td class="col-9"><%= @reserve.age %></td>
+      </tr>
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">住所</th>
+        <td class="col-9"><%= @reserve.address %></td>
+      </tr>
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">電話番号</th>
+        <td class="col-9"><%= @reserve.phone_number %></td>
+      </tr>
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">メールアドレス</th>
+        <td class="col-9"><%= @reserve.email %></td>
+      </tr>
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">希望日</th>
+        <td class="col-9"><%= @reserve.reservation_date.strftime("%Y年%m月%d日") %></td>
+      </tr>
+      <tr>
+        <th class="col-3" style="background-color: #EAC7C7;">予約ステータス</th>
+        <td class="col-9">
+          <%= form_with model: @reserve, url: admin_reserf_path, local: true, method: :patch do |f| %>
+            <%= f.select :reservation_status, Reserve.reservation_statuses_i18n.invert %>
+            <%= f.submit "更新" %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
+  <div class="row mt-3">
+    <div class="col-3">
+      <%= link_to "予約履歴一覧", admin_reserves_path, class: "btn btn-outline-secondary btn-block" %>
+    </div>
+  </div>
+</div>

@@ -7,120 +7,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
-    <script src="https://kit.fontawesome.com/7ea106af3e.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/7ea106af3e.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
   
 
   <body class="min-vh-100">
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <!--<a class="navbar-brand" href="/">%= image_tag "logo2.jpg", :size => "120x120" %></a>-->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-
-          <!--adminログイン時のヘッダー-->
-          <% if admin_signed_in? %>
-            <li class="nav-item">
-              <%= link_to admin_items_path, class: "nav-link" do %>
-                <i class="fa-solid fa-cake-candles">商品一覧</i>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to admin_customers_path, class: "nav-link" do %>
-                <i class="fas fa-users">会員一覧</i>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to admin_path, class: "nav-link" do %>
-                <i class="fas fa-clipboard-list">注文履歴一覧</i>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to admin_genres_path, class: "nav-link" do %>
-                <i class="fas fa-tags">ジャンル一覧</i>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to destroy_admin_session_path, method: :delete, class: "nav-link" do %>
-                <i class="fas fa-sign-out-alt">ログアウト</i>
-              <% end %>
-            </li>
-
-          <!--customersログイン時のヘッダー-->
-          <% elsif customer_signed_in? %>
-            <li class="nav-link">
-              ようこそ <%= link_to customers_path do %>
-              <strong><%= current_customer.last_name %><%= current_customer.first_name %></strong>
-              <% end %>
-              さん
-            </li>
-            <li class="nav-item">
-              <%= link_to customers_path, class: "nav-link" do %>
-                <i class="fas fa-user-circle">マイページ</i>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to items_path, class: "nav-link" do %>
-                <i class="fa-solid fa-cake-candles">商品一覧</i>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to cart_items_path, class: "nav-link" do %>
-                <i class="fas fa-shopping-cart">カート</i>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to destroy_customer_session_path, method: :delete, class: "nav-link" do %>
-                <i class="fas fa-sign-out-alt">ログアウト</i>
-              <% end %>
-            </li>
-
-          <% else %>
-
-          <!--ログイン前時のヘッダー-->
-            <li class="nav-item">
-              <%= link_to about_path, class: "nav-link" do %>
-                <i class="fa-solid fa-heart">About</i>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to items_path, class: "nav-link" do %>
-                <i class="fa-solid fa-cake-candles">商品一覧</i>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to new_customer_registration_path, data: { "turbolinks" => false }, class: "nav-link" do %>
-                <i class="fas fa-user-plus">新規登録</i>
-              <% end %>
-            </li>
-            <li class="nav-item">
-              <%= link_to new_customer_session_path, class: "nav-link" do %>
-                <i class="fa-solid fa-right-to-bracket">ログイン</i>
-              <% end %>
-            </li>
-          <% end %>
-
-        </ul>
-      </div>
-    </nav>
-    <!--<div class="search @query text-right" >-->
-    <!--  %= search_form_for @q, url: search_path, scope: :post, local: true do |f| %>-->
-        <!--name_con t= nameカラムの部分一致/name_eq = nameカラムの完全一致-->
-    <!--    %= f.search_field :name_cont, placeholder: "キーワード検索" %>-->
-    <!--    % f.submit %>-->
-    <!--  % end %>-->
-    <!--</div>-->
-
+  <%= render "layouts/header" %>
   </header>
-
   <main class="min-vw-100">
     <%= yield %>
   </main>

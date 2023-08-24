@@ -8,15 +8,15 @@
   text-align: center; /* テキストを中央揃えにするために追加 */
 }
 
-.image-overlay {
+.reserve-image-overlay {
   position: absolute;
-  bottom: -20px; 
+  bottom: 20px; 
   left: 0;
   width: 100%;
   background-color: rgba(5, 0, 0, 0.0);
   font-weight: bold;
   font-size: 18px;
-  color: #967E76!important;
+  // color: #967E76!important;
   display: flex;
   align-items: center;
   justify-content: center;
