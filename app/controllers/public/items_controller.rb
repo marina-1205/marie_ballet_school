@@ -2,9 +2,7 @@ class Public::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    # @image = @item.image
     @genres = Genre.all
-    #@genre = Genre.find(params[:id])
     @cart_item = CartItem.new
   end
 

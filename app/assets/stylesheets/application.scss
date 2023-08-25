@@ -53,10 +53,25 @@ main {
   min-height: 660px;
 }
 
+.btn:hover {
+  transform: scale(1.2); 
+  transition: transform 0.3s ease;
+}
+
 footer {
   width: 100%;
   background-color:#F8E8EE;
   margin: 0;
+}
+
+.fab {
+  font-size: 30px;
+  margin: 5px 30px;
+}
+
+.fab:hover {
+  transform: scale(1.5); 
+  transition: transform 0.3s ease;
 }
 
 .h1 .h2 .h3 .h4 .h5{

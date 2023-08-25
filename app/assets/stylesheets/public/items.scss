@@ -7,31 +7,44 @@
   max-height: 350px; /* 適切な高さを設定してください */
 }
 
+.genre-card{
+  height: 100%;
+  margin: 30px;
+  border-radius: 15px;
+}
+
+.genre-card-text:hover {
+  transform: scale(1.2); 
+  transition: transform 0.3s ease; 
+}
+
 .card {
   height: 100%;
+  margin: 5px;
+  padding: 5px;
 }
 
  /* 商品画像を大きくするスタイル */
 .card:hover  {
-  transform: scale(1.2); /* 1.2倍のサイズに拡大 */
-  transition: transform 0.3s ease; /* アニメーションの速さとタイミングを設定 */
+  transform: scale(1.1);
+  transition: transform 0.3s ease; 
 }
 
 img {
-    border-radius: 12px; /* 画像の角を丸くする */
+    border-radius: 15px; /* 画像の角を丸くする */
 }
 
 .container {
-    margin-top: 20px; /* 上部の余白 */
-    margin-bottom: 20px; /* 下部の余白 */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .btn {
-    background-color: #ff80ab; /* ボタンの背景色 */
-    color: white; /* ボタンのテキストカラー */
+    background-color: #ff80ab; 
+    color: white; 
     border: none;
 }
 
 .btn:hover {
-    background-color: #ff3377; /* ホバーエフェクトの背景色 */
+    background-color: #ff3377; 
 }
