@@ -29,6 +29,16 @@ header {
   margin-bottom: 1rem;
 }
 
+.nav-item:hover {
+  font-size: 20px; 
+  color: #F675A8!important; 
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease; 
+}
+
 body {
     position: relative;
     background-image: image-url("background-image.jpg");

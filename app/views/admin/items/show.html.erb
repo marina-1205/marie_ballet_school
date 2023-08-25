@@ -1,16 +1,20 @@
 <div class="container">
   <div class="row">
-    <!-- 空のdivタグ（インデント整形のため） -->
   </div>
 
   <div class="row">
     <div class="col-sm-20 px-sm-0 mx-auto mb-5">
       <h2>☺︎商品詳細☺︎</h2>
-      
+      <% if @item.image.attached? %>
+        <%= image_tag @item.image, style: "max-width: 700px;" %>
+      <% else %>
+        No image available
+      <% end %>
+
       <table>
         <tr>
           <td>名前</td>
-          <td><%= @customer.last_name %><%= @customer.last_name %></td>
+          <td><%= @item.name %></td>
         </tr>
         <tr>
           <td>商品説明</td>
