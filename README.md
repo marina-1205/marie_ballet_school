@@ -29,7 +29,7 @@
 　<管理者側>
 
 　<会員側> 
-
+　![画面遷移図（会員側）](https://github.com/marina-1205/marie_ballet_school/assets/135565720/ad39a021-1b2c-41ee-ab50-77f867581ed7)
  
 ・ER図<br>
 ・テーブル提議書　https://docs.google.com/spreadsheets/d/1NeeWa5tIZbdWYIhcVOzigCrPfKqRMKQuoam_vlpvLgY/edit#gid=1341968071<br>
