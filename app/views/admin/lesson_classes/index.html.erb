@@ -11,7 +11,7 @@
         <%= form_with model: @lesson_class, url: admin_lesson_classes_path, method: :post, local: true do |f| %>
           <%= f.label :name, "クラス名" %>
           <%= f.text_field :name %>
-          <%= f.submit "新規登録", class: "btn btn-success", style: "background-color: #dc8ba7;" %>
+          <%= f.submit "新規登録", class: "btn btn-outline-light", style: "background-color: #dc8ba7;" %>
         <% end %>
       </div>
     </div>
@@ -36,7 +36,7 @@
               <% @lesson_classes.each do |lessonclass| %>
                 <tr>
                   <td class="text-center"><%= lessonclass.name %></td>
-                  <td class="text-center"><%= link_to "編集する", edit_admin_lesson_class_path(lessonclass), class: "btn btn-success", style: "background-color: #FEE3EC;" %></td>
+                  <td class="text-center"><%= link_to "編集する", edit_admin_lesson_class_path(lessonclass), class: "btn btn-outline-light", style: "background-color: #FEE3EC;" %></td>
                 </tr>
               <% end %>
             </tbody>

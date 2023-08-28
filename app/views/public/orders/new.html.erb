@@ -19,8 +19,11 @@
             <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
             <%= f.label :payment_method_transfer, Order.payment_methods_i18n[:transfer] %><br>
 
-            <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
-            <%= f.label :paypay, Order.payment_methods_i18n[:paypay] %><br>
+            <%= f.radio_button :payment_method, Order.payment_methods.key(2) %>
+            <%= f.label :payment_method_paypay, Order.payment_methods_i18n[:paypay] %><br>
+            
+            <%= f.radio_button :payment_method, Order.payment_methods.key(3) %>
+            <%= f.label :payment_method_conveniencestore, Order.payment_methods_i18n[:conveniencestore] %><br>
           </td>
         </tr>
         <tr>
@@ -33,7 +36,6 @@
       </tbody>
     </table>
 
-   
-    <%= f.submit "確認画面へ進む" %>
+    <%= f.submit "確認画面へ進む", class: "btn btn-secondary", style: "background-color: #FAF3F0; border-color: #FAF3F0; color: #967E76;" %>
   <% end %>
 </div>

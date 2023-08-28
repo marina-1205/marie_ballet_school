@@ -71,7 +71,7 @@
         <%= f.hidden_field :payment_method, :value => @order.payment_method %>
 
         <div class="col text-center">
-          <%= f.submit '注文を確定する', data: { confirm: "注文確定をします よろしいですか？" }, class: 'btn btn btn-secondary' %>
+          <%= f.submit '注文を確定する', data: { confirm: "注文確定をします よろしいですか？" }, class: "btn btn-outline-light", style: "background-color: #FEE3EC; border-color: #FEE3EC; color: #967E76;" %>
         </div>
       <% end %>
     </div>

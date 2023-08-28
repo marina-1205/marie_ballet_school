@@ -10,7 +10,7 @@
       <%= form_with model: @lesson_class, url: admin_lesson_class_path, method: :patch, local: true do |f| %>
         <%= f.label :name, "クラス名" %>
         <%= f.text_field :name, value: @lesson_class.name %>
-        <%=f.submit "変更を保存", class: "btn btn-success", style: "background-color: #dc8ba7;" %>
+        <%=f.submit "変更を保存", class: "btn btn-outline-light", style: "background-color: #dc8ba7;" %>
       <% end %>
     </div>
   </div>

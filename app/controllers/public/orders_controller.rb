@@ -83,7 +83,8 @@ class Public::OrdersController < ApplicationController
   # 注文詳細画面を表示するアクション
   def show
     @order = Order.find(params[:id])
-    
+    @customer = current_customer
+    @orders = current_customer.orders
   end
   
   def get_confirm

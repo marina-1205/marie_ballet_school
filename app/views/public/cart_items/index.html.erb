@@ -9,7 +9,7 @@
         <h2>ショッピングカート</h2>
       </div>
       <div class="ml-auto">
-        <%= link_to 'カートを空にする', clear_cart_items_path, method: :delete, class: "btn btn-secondary" %>
+        <%= link_to 'カートを空にする', clear_cart_items_path, method: :delete, class: "btn btn-secondary", style: "background-color: #FEE3EC;" %>
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@
                 </td>
                 <td><%= cart_item.subtotal.to_s(:delimited) %>円</td>
                 <td>
-                  <div class="text-center"><%= link_to '削除', cart_item_path(cart_item), method: :delete, class: "btn btn-secondary", data: { confirm: "本当に削除しますか？" } %></div>
+                  <div class="text-center"><%= link_to '削除', cart_item_path(cart_item), method: :delete, class: "btn btn-secondary", style: "background-color: #FAF3F0;", data: { confirm: "本当に削除しますか？" } %></div>
                 </td>
               </tr>
             <% end %>
@@ -75,10 +75,10 @@
   <div class="col text-center">
     <div class="d-flex justify-content-center"> <!-- ボタンを中央揃えにするためのクラスを追加 -->
       <div class="mx-2"> <!-- ボタン間の間隔を調整するためのクラスを追加 -->
-        <%= link_to '買い物を続ける', items_path, class: "btn btn-secondary" %>
+        <%= link_to '買い物を続ける', items_path, class: "btn btn-secondary", style: "background-color: #FEE3EC;" %>
       </div>
       <div class="mx-2">
-        <%= link_to '情報入力へ進む', new_order_path, class: "btn btn-secondary" %>
+        <%= link_to '情報入力へ進む', new_order_path, class: "btn btn-secondary", style: "background-color: #FAF3F0;" %>
       </div>
     </div>
   </div>
