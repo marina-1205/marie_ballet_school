@@ -9,6 +9,11 @@
           <!--adminログイン時のヘッダー-->
           <% if admin_signed_in? %>
             <li class="nav-item">
+              <%= link_to admin_path, class: "nav-link" do %>
+                <i class="fas fa-smile">管理TOP</i>
+              <% end %>
+            </li>
+            <li class="nav-item">
               <%= link_to admin_items_path, class: "nav-link" do %>
                 <i class="fas fa-chess-queen">商品</i>
               <% end %>
@@ -29,7 +34,7 @@
               <% end %>
               <li class="nav-item">
               <%= link_to admin_reserves_path, class: "nav-link" do %>
-                <i class="fas fa-scroll">予約</i>
+                <i class="fas fa-seedling">予約</i>
               <% end %>
             </li>
             <li class="nav-item">
