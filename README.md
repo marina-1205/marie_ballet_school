@@ -27,7 +27,7 @@
 ・ワイヤーフレーム　https://app.diagrams.net/#G1P9iHfAXeF8vSq6JuV-UZkPGcNPHarZCG<br>
 ・画面遷移図<br>
 　<管理者側>
- 　![画面遷移図（管理者側](https://github.com/marina-1205/marie_ballet_school/assets/135565720/e5193292-b4f7-40e7-b60c-2559e5838cf9)
+　![画像遷移図（管理者側）](https://github.com/marina-1205/marie_ballet_school/assets/135565720/b5f9cc7d-9e19-40ca-8695-2a93f25ea0ea)
 　<会員側> 
 　![画面遷移図（会員側）](https://github.com/marina-1205/marie_ballet_school/assets/135565720/ad39a021-1b2c-41ee-ab50-77f867581ed7)
  
