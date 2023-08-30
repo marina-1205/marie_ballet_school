@@ -15,9 +15,9 @@
           <tbody>
             <% @orders.each do |order| %>
               <tr>
-                <td><%= link_to order.created_at.strftime('%Y/%m/%d'), admin_order_path(order) %></td>
+                <td><%= link_to order.created_at.strftime("%Y年%m月%d日"), admin_order_path(order) %></td>
                 <td><%= order.full_name %> 様</td>
-                <td><%= order.order_items.sum(:quantity) %>個</td>
+                <td><%= order.order_items.sum(:quantity) %>着</td>
                 <td><%= order.status_i18n %></td>
               </tr>
             <% end %>
