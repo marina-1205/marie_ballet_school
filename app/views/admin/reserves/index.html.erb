@@ -16,9 +16,9 @@
           <tbody>
             <% @reserves.each do |reserve| %>
               <tr><% pp reserve %>
-                <td><%= link_to reserve.created_at.strftime("%Y年%m月%d日"), admin_reserf_path(reserve) %></td>
+                <td><%= link_to reserve.created_at.strftime("%Y/%m/%d"), admin_reserf_path(reserve) %></td>
                 <td><%= reserve.last_name %><%= reserve.first_name %> 様</td>
-                <td><%= reserve.reservation_date.strftime("%Y年%m月%d日") %></td>
+                <td><%= reserve.reservation_date.strftime("%Y/%m/%d") %></td>
                 <td><%= reserve.reservation_status_i18n %></td>
               </tr>
             <% end %>
