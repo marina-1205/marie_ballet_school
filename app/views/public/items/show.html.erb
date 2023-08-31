@@ -6,6 +6,7 @@
       </div>
     </div>
 
+    <!-- 商品詳細表示 -->
     <div class="text-center col-md-8">
       <% if @item.image.attached? %>
         <%= image_tag @item.image, style: "width: 600px;" %>
@@ -13,6 +14,7 @@
         No image available
       <% end %>
       
+      <!-- 商品情報を表示 -->
       <div class=" mb-3">
         <div class="body">
           <h2 class="title"><strong><%= @item.name %></strong></h2>
@@ -23,6 +25,7 @@
       <div class="row">
         <div class="col-md-4">
           
+          <!-- ジャンル -->
             <div class="body">
               <h5 class="ctitle">ジャンル</h5>
               <p class="text"><%= @item.genre.name %></p>
