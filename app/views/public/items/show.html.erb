@@ -13,7 +13,11 @@
       <% else %>
         No image available
       <% end %>
-      
+      <div class="tag-box">
+        <% @item.tags.each do |tag| %>
+        <span class="label"><%= tag.name %></span>
+        <% end %>
+     </div>
       <!-- 商品情報を表示 -->
       <div class=" mb-3">
         <div class="body">

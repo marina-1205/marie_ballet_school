@@ -10,6 +10,11 @@
       <% else %>
         No image available
       <% end %>
+      <div class="tag-box">
+        <% @item.tags.each do |tag| %>
+        <span class="label"><%= tag.name %></span>
+        <% end %>
+     </div>
 
       <table>
         <tr>

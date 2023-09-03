@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_many :cart_items, dependent: :destroy
   has_many :order_items, dependent: :destroy
   has_many :orders, through: :order_item
+  has_many :tags, dependent: :destroy
   belongs_to :genre
 
   # カート内の数量を取得するメソッド

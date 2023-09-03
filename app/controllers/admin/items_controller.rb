@@ -13,7 +13,11 @@ class Admin::ItemsController < ApplicationController
 
   def create
     @item =Item.new(item_params)
+    tags = Vision.get_image_data(item_params[:image])
     if @item.save!
+       tags.each do |tag|
+        @item.tags.create(name: tag)
+      end
       redirect_to admin_item_path(@item), notice: "商品が登録されました☺︎"
     else
       render :new, notice: "商品の登録︎が失敗しました"
