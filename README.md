@@ -1,6 +1,7 @@
 # マリーバレエスクール
 ​![image](https://github.com/marina-1205/marie_ballet_school/assets/135565720/665a6b70-1eef-461d-a54a-4499c64166e2.jpg)
 ## サイト概要
+
 ### サイトテーマ
 バレエスクールの紹介・バレエスクールの体験予約・バレエ衣装のレンタル予約サイトとなります。<br>
 
