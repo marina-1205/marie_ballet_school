@@ -31,11 +31,11 @@
 　![画面遷移図（会員側）](https://github.com/marina-1205/marie_ballet_school/assets/135565720/ad39a021-1b2c-41ee-ab50-77f867581ed7)
  
 ・ER図<br>
-　![ER図](https://github.com/marina-1205/marie_ballet_school/assets/135565720/9140336e-80ad-4630-9ad7-aaedc3630ad4)
+![ER図](https://github.com/marina-1205/marie_ballet_school/assets/135565720/5c933659-ac5b-404c-baed-3552a405a459)
 
 ・テーブル提議書　https://docs.google.com/spreadsheets/d/1NeeWa5tIZbdWYIhcVOzigCrPfKqRMKQuoam_vlpvLgY/edit#gid=1341968071<br>
 ・アプリケーション詳細設計書<br>
-　![APP詳細設計書](https://github.com/marina-1205/marie_ballet_school/assets/135565720/3814c65d-86ae-4481-af0f-c8ad0dbafe9f)
+![APP詳細設計書](https://github.com/marina-1205/marie_ballet_school/assets/135565720/d09eb204-f1dc-4a1a-9018-7d05c8dbf3cd)
 
 ## 開発環境
 ・OS：Linux(CentOS)<br>
