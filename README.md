@@ -52,6 +52,7 @@
 ・kaminari(ページネーション)<br>
 ・jp-prefecture(住所自動反映）<br>
 ・better-errors（エラー表示）<br>
+・Google Vision API (画像認識)<br>
 
 ## 使用素材
 ・アキコバレエスクールより衣装写真提供<br>
