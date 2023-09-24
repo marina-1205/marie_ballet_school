@@ -35,8 +35,6 @@ Rails.application.routes.draw do
     
     resource :customers, only: [:new, :create, :show, :edit, :update]
     
-    get "search" => "searches#search"
-    
     get 'reserves' => 'reserves#new'
     resources :reserves, only: [:create,] do
     collection do
