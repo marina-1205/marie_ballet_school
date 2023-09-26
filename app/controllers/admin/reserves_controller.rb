@@ -1,5 +1,4 @@
 class Admin::ReservesController < ApplicationController
-    before_action :authenticate_admin!
   def index
     @reserves = Reserve.all.page(params[:page])
     @lesson_class = LessonClass.all
@@ -10,6 +9,16 @@ class Admin::ReservesController < ApplicationController
     @reserve = Reserve.find(params[:id])
     @lesson_class = LessonClass.all
   end
+  
+  # def create
+  #   @reserve = Reserve.new(reserve_params)
+  #   if @reserve.save
+  #     redirect_to admin_reserves_path(@reserve.id)
+  #   else
+  #     @reserves = Reserve.all
+  #     render :index
+  #   end
+  # end
   
   def update
      @reserve = Reserve.find(params[:id])
