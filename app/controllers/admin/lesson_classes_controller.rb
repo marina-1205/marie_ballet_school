@@ -1,4 +1,5 @@
 class Admin::LessonClassesController < ApplicationController
+    before_action :authenticate_admin!
   def index
     @lesson_class = LessonClass.new
     @lesson_classes = LessonClass.all
