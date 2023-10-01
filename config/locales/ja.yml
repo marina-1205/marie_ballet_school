@@ -208,3 +208,65 @@ ja: # 日本語の設定を行う
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+
+  activerecord:
+    errors:
+      models:
+        customer:
+          attributes:
+            email:
+              blank: "メールアドレスを入力してください"
+              format: "メールアドレスは半角文字のみである必要があります"
+            password:
+              blank: "パスワードを入力してください"
+            last_name:
+              blank: "苗字を入力してください"
+            first_name:
+              blank: "名前を入力してください"
+            last_kana_name:
+              blank: "フリガナ（苗字）を入力してください"
+              format: "フリガナ（苗字）はカタカナのみである必要があります"
+            first_kana_name:
+              blank: "フリガナ（名前）を入力してください"
+              format: "フリガナ（名前）はカタカナのみである必要があります"
+            address:
+              blank: "住所を入力してください"
+            postcode:
+              blank: "郵便番号を入力してください"
+              format: "郵便番号は数字のみである必要があります"
+            school_name:
+              blank: "所属団体名を入力してください"
+            post_name:
+              blank: "役職名を入力してください"
+            phone_number:
+              blank: "電話番号を入力してください"
+              format: "電話番号は数字のみである必要があります"
+        reserve:
+          attributes:
+            lesson_class:
+              required: "希望クラスを選択してください"
+            last_name:
+              blank: "苗字を入力してください"
+            first_name:
+              blank: "名前を入力してください"
+            last_kana_name:
+              blank: "フリガナ（苗字）を入力してください"
+              format: "フリガナ（苗字）はカタカナのみである必要があります"
+            first_kana_name:
+              blank: "フリガナ（名前）を入力してください"
+              format: "フリガナ（名前）はカタカナのみである必要があります"
+            phone_number:
+              blank: "電話番号を入力してください"
+              format: "電話番号は数字のみである必要があります"
+            email:
+              blank: "メールアドレスを入力してください"
+              format: "メールアドレスは半角文字のみである必要があります"
+            age:
+              blank: "年齢を入力してください"
+            reservation_date:
+              blank: "希望日を選択してください"
+  errors:
+    format: "%{message}"
+    messages:
+      blank: "を入力してください"
+      invalid: "は無効です"

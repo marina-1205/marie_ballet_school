@@ -11,14 +11,14 @@
         開始時間の１０分前にはお越しいただくようにお願いいたします。<br>
         お気軽に参加してくださいね♡<br>
         電話からの予約も可能です♪　TEL:092-xxx-xxx</strong><br>
-  </div>
-</div>
+        </div>
+      </div>
 <% if @reserve.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@reserve.errors.count, "error") %> prohibited this reserve from being saved:</h2>
     <ul>
       <% @reserve.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <%= message %><br>
       <% end %>
     </ul>
   </div>
