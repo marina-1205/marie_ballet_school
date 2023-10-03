@@ -44,7 +44,7 @@ class Public::CartItemsController < ApplicationController
       redirect_to request.referer, alert: '数量の変更に失敗しました'
     end
   end
-
+  
   #一つの商品を削除
   def destroy
     current_customer.cart_items.find(params[:id]).destroy
