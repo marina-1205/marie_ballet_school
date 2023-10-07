@@ -2,7 +2,7 @@
   <div class="row">
     <div class="text-center">
       <div class="image-container">
-        <%= image_tag "lesson.jpg", size: "1200x600", class: "img-fluid mx-auto" %>
+        <%= image_tag "lesson.jpg", size: "1200x700", class: "img-fluid mx-auto" %>
         <div class="reserve-image-overlay">
         ❤︎体験レッスンについて❤︎<br>
         体験レッスンに参加の際は、無料でレオタードをレンタル可能です。<br>
@@ -26,7 +26,7 @@
  <div class = "col text-center">
       <h3 class = "col-4 text-center">体験レッスン予約☺︎</h3>
       
-      <div "col-4 text-center">全てのフォームにご入力後、ご送信をお願いします。</div>
+      <div class = "col-4 text-center">全てにご入力後、送信をお願いします。</div>
       <br>
      <%= form_with model: @reserve do |f| %>
       <table class = "table table-borderless">
@@ -45,14 +45,14 @@
           <td class = "col-3 text-left"><%= f.text_field :first_kana_name, placeholder:"マリ", autofocus: true, autocomplete: "フリガナ" %></td>
         </tr>
         <tr class="row">
-          <td class = "col-3"><%= f.label :希望クラス %></td>
+          <td class = "col-3">希望クラス</td>
           <td class = "col-1 text-right"></td>
           <td class = "col-2 text-left"><%= f.collection_select :lesson_class_id, LessonClass.all, :id, :name, prompt: "--選択してください--" %></td>
           <td></td>
           <td></td>
           </tr>
           <tr class="row">
-            <td class="col-3"><%= f.label :体験者様の年齢 %></td>
+            <td class="col-3">体験者様の年齢</td>
             <td class="col-1 text-right"></td>
             <td class="col-2 text-left">
             <%= f.collection_select :age, 3..100, :to_s, :to_s, { prompt: "--選択してください--" }, { autofocus: true, autocomplete: "年齢" } %> </td>
@@ -60,28 +60,28 @@
             <td></td>
           </tr>
         <tr class = "row">
-          <td class = "col-3"><%= f.label :住所 %></td>
+          <td class = "col-3">住所</td>
           <td class = "col-1 text-right"></td>
           <td class = "col-2 text-left"><%= f.text_field :address, placeholder:"福岡県", autofocus: true, autocomplete: "住所", :size => "53", class: "text-pink" %></td>
           <td></td>
           <td></td>
         </tr>
         <tr class = "row">
-          <td class = "col-3"><%= f.label :電話番号（ハイフンなし） %></td>
+          <td class = "col-3">電話番号（ハイフンなし)</td>
           <td class = "col-1 text-right"></td>
           <td class = "col-2 text-left"><%= f.text_field :phone_number, placeholder:"1111111", autofocus: true, autocomplete: "電話番号" %></td>
           <td></td>
           <td></td>
         </tr>
         <tr class = "row">
-          <td class = "col-3"><%= f.label :メールアドレス %></td>
+          <td class = "col-3">メールアドレス</td>
           <td class = "col-1 text-right"></td>
           <td class = "col-2 text-left"><%= f.email_field :email, placeholder:"example@com", autofocus: true, autocomplete: "email" %></td>
           <td></td>
           <td></td>
         </tr>
         <tr class="row">
-          <td class="col-3"><%= f.label :希望日 %></td>
+          <td class="col-3">希望日</td>
           <td class="col-1 text-right"></td>
           <td class="col-2 text-left">
             
