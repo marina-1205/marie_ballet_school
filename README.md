@@ -58,6 +58,4 @@
 （写真使用について補足記載：スクールからの許可、また運営部より写真使用の許可を頂いております。よろしくお願いいたします。）<br>
 ・フリー素材として使用 canva(https://www.canva.com/)<br>
 ・フリー素材として使用 photo AC(https://www.photo-ac.com/)<br>
-・フリー素材として使用 Template-Box(https://template-box.jp/)
-
-
+・フリー素材として使用 Template-Box(https://template-box.jp/)<br>
