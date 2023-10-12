@@ -7,5 +7,4 @@ class CartItem < ApplicationRecord
   def subtotal
     item.price * quantity
   end
-
 end
